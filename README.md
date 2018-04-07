@@ -1,6 +1,6 @@
 # clickbank
 
-##Coding Challenge!
+## Coding Challenge!
 
 Coding Sample 
 
