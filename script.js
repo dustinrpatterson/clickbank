@@ -1,7 +1,7 @@
 var findReceiptButton = document.getElementById("findReceiptButton");
 var receiptsContainer = document.getElementById("receipts");
+// Had to use the following URL in my request because of CORS
 var url = "https://bcw-getter.herokuapp.com/?url=";
-var allReceipts = [];
 
 // This is the reusable GET function
 function httpGetAsync(theUrl, callback) {
@@ -37,7 +37,6 @@ function findRecieptsByNickname(vendor) {
     } else {
       receiptsContainer.innerHTML += `<h5 class="error">Vendor not found. Please check the spelling and try again.</h5>`;
     }
-    // For loop over data (receipt IDs)
   });
 }
 
@@ -71,7 +70,6 @@ function findReceiptDetails(Id) {
 
 function drawData(data, elem) {
   if (data.data) {
-    // TODO - Write accordion here
     elem.innerHTML += `
         <ul>
             <li>Email: ${data.data.customer.billing.email}</li>
