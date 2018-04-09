@@ -15,31 +15,33 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container my-4 py-2">
         <div class="row">
-            <div class="col-12 my-4">
-                <h1>Welcome to the Jake Lake Query Tool</h1>
+            <div class="col-12 my-1">
+                <h1 class="text-center">Jake Lake API Query Tool</h1>
             </div>
             <div class="col-12 my-2">
-                <h3>Search jakelake.io by vendor nickname to find receipts and details.</h3>
+                <h5>A tool created by Dustin Patterson that allows you to search the jakelake.io API by vendor nickname to find
+                    all associated receipts and details.</h5>
             </div>
         </div>
         <div class="row">
             <div class="col-12 nickname-form my-2">
-                <form>
-                    <div class="form-group row">
-                        <label for="vendorNickname" class="col-sm-4 col-form-label">Vendor Nickname:</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" id="vendorNickname" placeholder="Vendor Nickname">
+                <form class="form-inline">
+                    <div class="form-row row align-items-center">
+                        <div class="col text-center">
+
+                            <input type="text" class="form-control mb-2 mr-2" id="vendorNickname" placeholder="Vendor Nickname">
+                            <button id="findReceiptButton" class="btn btn-primary mb-2">Search</button>
+
                         </div>
                     </div>
-                    <button id="findReceiptButton" class="btn btn-primary mb-2">Search</button>
+
                 </form>
             </div>
         </div>
         <div class="row">
             <div class="col-12" id="receipts">
-
             </div>
         </div>
     </div>
@@ -55,3 +57,5 @@
 </body>
 
 </html>
+
+<!-- Add plus/minus for accordion -->

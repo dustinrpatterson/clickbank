@@ -23,17 +23,21 @@ findReceiptButton.addEventListener("click", function(e) {
 function findRecieptsByNickname(vendor) {
   // Clears page on new search
   receiptsContainer.innerHTML = "";
-  
+
   var urlNickname = "http://www.jakelake.io/api/?vendor=" + vendor;
   var apiNicknameUrl = url + encodeURIComponent(urlNickname);
   httpGetAsync(apiNicknameUrl, function(data) {
     receiptsContainer.innerHTML = `<div id="accordion"></div>`;
     data = JSON.parse(data);
     receiptArray = data.data;
+    if (receiptArray) {
+      receiptArray.forEach(receiptID => {
+        findReceiptDetails(receiptID);
+      });
+    } else {
+      receiptsContainer.innerHTML += `<h5 class="error">Vendor not found. Please check the spelling and try again.</h5>`;
+    }
     // For loop over data (receipt IDs)
-    receiptArray.forEach(receiptID => {
-      findReceiptDetails(receiptID);
-    });
   });
 }
 
@@ -79,7 +83,7 @@ function drawData(data, elem) {
   } else {
     elem.innerHTML += `
         <ul>
-            <li>${data.status_message}</li>
+            <li class="error">${data.status_message}</li>
         </ul>`;
   }
 }
