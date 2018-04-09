@@ -1,6 +1,6 @@
 var findReceiptButton = document.getElementById("findReceiptButton");
 var receiptsContainer = document.getElementById("receipts");
-var url = "http://bcw-getter.herokuapp.com/?url=";
+var url = "https://bcw-getter.herokuapp.com/?url=";
 var allReceipts = [];
 
 // This is the reusable GET function
