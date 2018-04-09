@@ -1,0 +1,14 @@
+body{
+    background-image: url("background.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+.container{
+    background-color: rgba(209, 209, 209, 0.9);
+    border-radius: 5px;
+}
+.error{
+    color: red;
+}
